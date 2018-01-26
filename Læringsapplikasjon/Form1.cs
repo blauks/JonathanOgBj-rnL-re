@@ -14,7 +14,7 @@ namespace Læringsapplikasjon
     {
         public Form1()
         {
-            //hei bjørn
+            //hallo
             InitializeComponent();
         }
     }

@@ -32,5 +32,10 @@ namespace Læringsapplikasjon
         {
 
         }
+
+        private void FigurTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

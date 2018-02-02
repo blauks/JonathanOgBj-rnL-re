@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pStartmeny = new System.Windows.Forms.Panel();
-            this.labelStartMeny = new System.Windows.Forms.Label();
-            this.btStartD = new System.Windows.Forms.Button();
-            this.btStartG = new System.Windows.Forms.Button();
-            this.btStartT = new System.Windows.Forms.Button();
-            this.btStartF = new System.Windows.Forms.Button();
             this.pSpillmeny = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btSpillmenyI = new System.Windows.Forms.Button();
             this.btSpillmenyT = new System.Windows.Forms.Button();
             this.btSpillmenyS = new System.Windows.Forms.Button();
             this.lNavnSpill = new System.Windows.Forms.Label();
+            this.labelStartMeny = new System.Windows.Forms.Label();
+            this.btStartD = new System.Windows.Forms.Button();
+            this.btStartG = new System.Windows.Forms.Button();
+            this.btStartT = new System.Windows.Forms.Button();
+            this.btStartF = new System.Windows.Forms.Button();
+            this.FigurTimer = new System.Windows.Forms.Timer(this.components);
             this.pStartmeny.SuspendLayout();
             this.pSpillmeny.SuspendLayout();
             this.SuspendLayout();
@@ -56,58 +58,6 @@
             this.pStartmeny.Name = "pStartmeny";
             this.pStartmeny.Size = new System.Drawing.Size(947, 567);
             this.pStartmeny.TabIndex = 7;
-            // 
-            // labelStartMeny
-            // 
-            this.labelStartMeny.AutoSize = true;
-            this.labelStartMeny.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartMeny.Location = new System.Drawing.Point(368, 57);
-            this.labelStartMeny.Name = "labelStartMeny";
-            this.labelStartMeny.Size = new System.Drawing.Size(273, 63);
-            this.labelStartMeny.TabIndex = 11;
-            this.labelStartMeny.Text = "Startmeny";
-            // 
-            // btStartD
-            // 
-            this.btStartD.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartD.Location = new System.Drawing.Point(511, 360);
-            this.btStartD.Name = "btStartD";
-            this.btStartD.Size = new System.Drawing.Size(203, 203);
-            this.btStartD.TabIndex = 10;
-            this.btStartD.Text = "Dyr";
-            this.btStartD.UseVisualStyleBackColor = true;
-            // 
-            // btStartG
-            // 
-            this.btStartG.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartG.Location = new System.Drawing.Point(291, 360);
-            this.btStartG.Name = "btStartG";
-            this.btStartG.Size = new System.Drawing.Size(203, 203);
-            this.btStartG.TabIndex = 9;
-            this.btStartG.Text = "Geografi";
-            this.btStartG.UseVisualStyleBackColor = true;
-            // 
-            // btStartT
-            // 
-            this.btStartT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartT.Location = new System.Drawing.Point(511, 141);
-            this.btStartT.Name = "btStartT";
-            this.btStartT.Size = new System.Drawing.Size(203, 203);
-            this.btStartT.TabIndex = 8;
-            this.btStartT.Text = "Tall";
-            this.btStartT.UseVisualStyleBackColor = true;
-            // 
-            // btStartF
-            // 
-            this.btStartF.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartF.Location = new System.Drawing.Point(291, 141);
-            this.btStartF.Name = "btStartF";
-            this.btStartF.Size = new System.Drawing.Size(203, 203);
-            this.btStartF.TabIndex = 7;
-            this.btStartF.Text = "Figurer";
-            this.btStartF.UseVisualStyleBackColor = true;
-            this.btStartF.Click += new System.EventHandler(this.btStartF_Click);
-            this.btStartF.MouseHover += new System.EventHandler(this.mh);
             // 
             // pSpillmeny
             // 
@@ -171,6 +121,62 @@
             this.lNavnSpill.TabIndex = 0;
             this.lNavnSpill.Text = "Navn på spill";
             // 
+            // labelStartMeny
+            // 
+            this.labelStartMeny.AutoSize = true;
+            this.labelStartMeny.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartMeny.Location = new System.Drawing.Point(368, 57);
+            this.labelStartMeny.Name = "labelStartMeny";
+            this.labelStartMeny.Size = new System.Drawing.Size(273, 63);
+            this.labelStartMeny.TabIndex = 11;
+            this.labelStartMeny.Text = "Startmeny";
+            // 
+            // btStartD
+            // 
+            this.btStartD.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartD.Location = new System.Drawing.Point(511, 360);
+            this.btStartD.Name = "btStartD";
+            this.btStartD.Size = new System.Drawing.Size(203, 203);
+            this.btStartD.TabIndex = 10;
+            this.btStartD.Text = "Dyr";
+            this.btStartD.UseVisualStyleBackColor = true;
+            // 
+            // btStartG
+            // 
+            this.btStartG.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartG.Location = new System.Drawing.Point(291, 360);
+            this.btStartG.Name = "btStartG";
+            this.btStartG.Size = new System.Drawing.Size(203, 203);
+            this.btStartG.TabIndex = 9;
+            this.btStartG.Text = "Geografi";
+            this.btStartG.UseVisualStyleBackColor = true;
+            // 
+            // btStartT
+            // 
+            this.btStartT.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartT.Location = new System.Drawing.Point(511, 141);
+            this.btStartT.Name = "btStartT";
+            this.btStartT.Size = new System.Drawing.Size(203, 203);
+            this.btStartT.TabIndex = 8;
+            this.btStartT.Text = "Tall";
+            this.btStartT.UseVisualStyleBackColor = true;
+            // 
+            // btStartF
+            // 
+            this.btStartF.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btStartF.Location = new System.Drawing.Point(291, 141);
+            this.btStartF.Name = "btStartF";
+            this.btStartF.Size = new System.Drawing.Size(203, 203);
+            this.btStartF.TabIndex = 7;
+            this.btStartF.Text = "Figurer";
+            this.btStartF.UseVisualStyleBackColor = true;
+            this.btStartF.Click += new System.EventHandler(this.btStartF_Click);
+            this.btStartF.MouseHover += new System.EventHandler(this.mh);
+            // 
+            // FigurTimer
+            // 
+            this.FigurTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +208,7 @@
         private System.Windows.Forms.Button btSpillmenyT;
         private System.Windows.Forms.Button btSpillmenyS;
         private System.Windows.Forms.Label lNavnSpill;
+        private System.Windows.Forms.Timer FigurTimer;
     }
 }
 

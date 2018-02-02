@@ -17,5 +17,20 @@ namespace Læringsapplikasjon
             //Hei det er meg Bjørn
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pStartmeny.Dock = DockStyle.Fill;
+        }
+
+        private void btStartF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mh(object sender, EventArgs e)
+        {
+
+        }
     }
 }

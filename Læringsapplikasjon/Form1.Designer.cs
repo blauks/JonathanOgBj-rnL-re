@@ -38,7 +38,6 @@
             this.lNavnSpill = new System.Windows.Forms.Label();
             this.labelStartMeny = new System.Windows.Forms.Label();
             this.btStartD = new System.Windows.Forms.Button();
-            this.btStartG = new System.Windows.Forms.Button();
             this.btStartT = new System.Windows.Forms.Button();
             this.btStartF = new System.Windows.Forms.Button();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
@@ -51,12 +50,12 @@
             this.pStartmeny.Controls.Add(this.pSpillmeny);
             this.pStartmeny.Controls.Add(this.labelStartMeny);
             this.pStartmeny.Controls.Add(this.btStartD);
-            this.pStartmeny.Controls.Add(this.btStartG);
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
-            this.pStartmeny.Location = new System.Drawing.Point(28, 26);
+            this.pStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pStartmeny.Location = new System.Drawing.Point(0, 0);
             this.pStartmeny.Name = "pStartmeny";
-            this.pStartmeny.Size = new System.Drawing.Size(947, 567);
+            this.pStartmeny.Size = new System.Drawing.Size(1004, 621);
             this.pStartmeny.TabIndex = 7;
             // 
             // pSpillmeny
@@ -66,9 +65,9 @@
             this.pSpillmeny.Controls.Add(this.btSpillmenyT);
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
             this.pSpillmeny.Controls.Add(this.lNavnSpill);
-            this.pSpillmeny.Location = new System.Drawing.Point(17, 33);
+            this.pSpillmeny.Location = new System.Drawing.Point(3, 0);
             this.pSpillmeny.Name = "pSpillmeny";
-            this.pSpillmeny.Size = new System.Drawing.Size(844, 518);
+            this.pSpillmeny.Size = new System.Drawing.Size(10, 10);
             this.pSpillmeny.TabIndex = 12;
             // 
             // button4
@@ -134,22 +133,12 @@
             // btStartD
             // 
             this.btStartD.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartD.Location = new System.Drawing.Point(511, 360);
+            this.btStartD.Location = new System.Drawing.Point(393, 361);
             this.btStartD.Name = "btStartD";
             this.btStartD.Size = new System.Drawing.Size(203, 203);
             this.btStartD.TabIndex = 10;
             this.btStartD.Text = "Dyr";
             this.btStartD.UseVisualStyleBackColor = true;
-            // 
-            // btStartG
-            // 
-            this.btStartG.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStartG.Location = new System.Drawing.Point(291, 360);
-            this.btStartG.Name = "btStartG";
-            this.btStartG.Size = new System.Drawing.Size(203, 203);
-            this.btStartG.TabIndex = 9;
-            this.btStartG.Text = "Geografi";
-            this.btStartG.UseVisualStyleBackColor = true;
             // 
             // btStartT
             // 
@@ -175,6 +164,7 @@
             // 
             // FigurTimer
             // 
+            this.FigurTimer.Interval = 1000;
             this.FigurTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
             // 
             // Form1
@@ -199,7 +189,6 @@
         private System.Windows.Forms.Panel pStartmeny;
         private System.Windows.Forms.Label labelStartMeny;
         private System.Windows.Forms.Button btStartD;
-        private System.Windows.Forms.Button btStartG;
         private System.Windows.Forms.Button btStartT;
         private System.Windows.Forms.Button btStartF;
         private System.Windows.Forms.Panel pSpillmeny;

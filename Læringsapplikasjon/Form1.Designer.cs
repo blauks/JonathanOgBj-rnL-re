@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.pStartmeny = new System.Windows.Forms.Panel();
             this.pSpillmeny = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.btSpillmenyI = new System.Windows.Forms.Button();
             this.btSpillmenyT = new System.Windows.Forms.Button();
             this.btSpillmenyS = new System.Windows.Forms.Button();
@@ -41,10 +40,14 @@
             this.btStartT = new System.Windows.Forms.Button();
             this.btStartF = new System.Windows.Forms.Button();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Ubrkuelig_Shit = new System.Windows.Forms.PictureBox();
+            this.pbSpillmeny = new System.Windows.Forms.PictureBox();
+            this.pbStartmeny = new System.Windows.Forms.PictureBox();
             this.pStartmeny.SuspendLayout();
             this.pSpillmeny.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
             this.SuspendLayout();
             // 
             // pStartmeny
@@ -54,32 +57,23 @@
             this.pStartmeny.Controls.Add(this.btStartD);
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
-            this.pStartmeny.Location = new System.Drawing.Point(31, 28);
+            this.pStartmeny.Controls.Add(this.pbStartmeny);
+            this.pStartmeny.Location = new System.Drawing.Point(81, 26);
             this.pStartmeny.Name = "pStartmeny";
-            this.pStartmeny.Size = new System.Drawing.Size(973, 593);
+            this.pStartmeny.Size = new System.Drawing.Size(923, 595);
             this.pStartmeny.TabIndex = 7;
             // 
             // pSpillmeny
             // 
-            this.pSpillmeny.Controls.Add(this.button4);
             this.pSpillmeny.Controls.Add(this.btSpillmenyI);
             this.pSpillmeny.Controls.Add(this.btSpillmenyT);
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
             this.pSpillmeny.Controls.Add(this.lNavnSpill);
+            this.pSpillmeny.Controls.Add(this.pbSpillmeny);
             this.pSpillmeny.Location = new System.Drawing.Point(3, 0);
             this.pSpillmeny.Name = "pSpillmeny";
-            this.pSpillmeny.Size = new System.Drawing.Size(10, 10);
+            this.pSpillmeny.Size = new System.Drawing.Size(593, 417);
             this.pSpillmeny.TabIndex = 12;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(840, 547);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 42);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Tilbake";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // btSpillmenyI
             // 
@@ -170,13 +164,31 @@
             this.FigurTimer.Interval = 1000;
             this.FigurTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
             // 
-            // pictureBox1
+            // Ubrkuelig_Shit
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1004, 621);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.Ubrkuelig_Shit.Location = new System.Drawing.Point(0, 0);
+            this.Ubrkuelig_Shit.Name = "Ubrkuelig_Shit";
+            this.Ubrkuelig_Shit.Size = new System.Drawing.Size(1004, 621);
+            this.Ubrkuelig_Shit.TabIndex = 13;
+            this.Ubrkuelig_Shit.TabStop = false;
+            // 
+            // pbSpillmeny
+            // 
+            this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
+            this.pbSpillmeny.Name = "pbSpillmeny";
+            this.pbSpillmeny.Size = new System.Drawing.Size(593, 417);
+            this.pbSpillmeny.TabIndex = 4;
+            this.pbSpillmeny.TabStop = false;
+            // 
+            // pbStartmeny
+            // 
+            this.pbStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbStartmeny.Location = new System.Drawing.Point(0, 0);
+            this.pbStartmeny.Name = "pbStartmeny";
+            this.pbStartmeny.Size = new System.Drawing.Size(923, 595);
+            this.pbStartmeny.TabIndex = 13;
+            this.pbStartmeny.TabStop = false;
             // 
             // Form1
             // 
@@ -191,7 +203,9 @@
             this.pStartmeny.PerformLayout();
             this.pSpillmeny.ResumeLayout(false);
             this.pSpillmeny.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,13 +218,14 @@
         private System.Windows.Forms.Button btStartT;
         private System.Windows.Forms.Button btStartF;
         private System.Windows.Forms.Panel pSpillmeny;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btSpillmenyI;
         private System.Windows.Forms.Button btSpillmenyT;
         private System.Windows.Forms.Button btSpillmenyS;
         private System.Windows.Forms.Label lNavnSpill;
         private System.Windows.Forms.Timer FigurTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Ubrkuelig_Shit;
+        private System.Windows.Forms.PictureBox pbSpillmeny;
+        private System.Windows.Forms.PictureBox pbStartmeny;
     }
 }
 

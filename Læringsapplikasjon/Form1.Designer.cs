@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pStartmeny = new System.Windows.Forms.Panel();
+            this.labelStartMeny = new System.Windows.Forms.Label();
+            this.btStartD = new System.Windows.Forms.Button();
+            this.btStartT = new System.Windows.Forms.Button();
+            this.btStartF = new System.Windows.Forms.Button();
+            this.pbStartmeny = new System.Windows.Forms.PictureBox();
             this.pSpillmeny = new System.Windows.Forms.Panel();
             this.btSpillmenyI = new System.Windows.Forms.Button();
             this.btSpillmenyT = new System.Windows.Forms.Button();
             this.btSpillmenyS = new System.Windows.Forms.Button();
             this.lNavnSpill = new System.Windows.Forms.Label();
             this.pbSpillmeny = new System.Windows.Forms.PictureBox();
-            this.labelStartMeny = new System.Windows.Forms.Label();
-            this.btStartD = new System.Windows.Forms.Button();
-            this.btStartT = new System.Windows.Forms.Button();
-            this.btStartF = new System.Windows.Forms.Button();
-            this.pbStartmeny = new System.Windows.Forms.PictureBox();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
             this.Ubrkuelig_Shit = new System.Windows.Forms.PictureBox();
             this.pFigurspill = new System.Windows.Forms.Panel();
             this.pStartmeny.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
             this.pSpillmeny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,67 +62,6 @@
             this.pStartmeny.Name = "pStartmeny";
             this.pStartmeny.Size = new System.Drawing.Size(127, 72);
             this.pStartmeny.TabIndex = 7;
-            // 
-            // pSpillmeny
-            // 
-            this.pSpillmeny.Controls.Add(this.btSpillmenyI);
-            this.pSpillmeny.Controls.Add(this.btSpillmenyT);
-            this.pSpillmeny.Controls.Add(this.btSpillmenyS);
-            this.pSpillmeny.Controls.Add(this.lNavnSpill);
-            this.pSpillmeny.Controls.Add(this.pbSpillmeny);
-            this.pSpillmeny.Location = new System.Drawing.Point(743, 445);
-            this.pSpillmeny.Name = "pSpillmeny";
-            this.pSpillmeny.Size = new System.Drawing.Size(37, 35);
-            this.pSpillmeny.TabIndex = 12;
-            // 
-            // btSpillmenyI
-            // 
-            this.btSpillmenyI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSpillmenyI.Location = new System.Drawing.Point(319, 411);
-            this.btSpillmenyI.Name = "btSpillmenyI";
-            this.btSpillmenyI.Size = new System.Drawing.Size(343, 71);
-            this.btSpillmenyI.TabIndex = 3;
-            this.btSpillmenyI.Text = "Instruksjon";
-            this.btSpillmenyI.UseVisualStyleBackColor = true;
-            // 
-            // btSpillmenyT
-            // 
-            this.btSpillmenyT.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSpillmenyT.Location = new System.Drawing.Point(319, 305);
-            this.btSpillmenyT.Name = "btSpillmenyT";
-            this.btSpillmenyT.Size = new System.Drawing.Size(343, 71);
-            this.btSpillmenyT.TabIndex = 2;
-            this.btSpillmenyT.Text = "Toppresultater";
-            this.btSpillmenyT.UseVisualStyleBackColor = true;
-            // 
-            // btSpillmenyS
-            // 
-            this.btSpillmenyS.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSpillmenyS.Location = new System.Drawing.Point(319, 202);
-            this.btSpillmenyS.Name = "btSpillmenyS";
-            this.btSpillmenyS.Size = new System.Drawing.Size(343, 71);
-            this.btSpillmenyS.TabIndex = 1;
-            this.btSpillmenyS.Text = "Spill";
-            this.btSpillmenyS.UseVisualStyleBackColor = true;
-            // 
-            // lNavnSpill
-            // 
-            this.lNavnSpill.AutoSize = true;
-            this.lNavnSpill.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lNavnSpill.Location = new System.Drawing.Point(321, 71);
-            this.lNavnSpill.Name = "lNavnSpill";
-            this.lNavnSpill.Size = new System.Drawing.Size(337, 63);
-            this.lNavnSpill.TabIndex = 0;
-            this.lNavnSpill.Text = "Navn på spill";
-            // 
-            // pbSpillmeny
-            // 
-            this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
-            this.pbSpillmeny.Name = "pbSpillmeny";
-            this.pbSpillmeny.Size = new System.Drawing.Size(37, 35);
-            this.pbSpillmeny.TabIndex = 4;
-            this.pbSpillmeny.TabStop = false;
             // 
             // labelStartMeny
             // 
@@ -178,6 +117,68 @@
             this.pbStartmeny.TabIndex = 13;
             this.pbStartmeny.TabStop = false;
             // 
+            // pSpillmeny
+            // 
+            this.pSpillmeny.Controls.Add(this.btSpillmenyI);
+            this.pSpillmeny.Controls.Add(this.btSpillmenyT);
+            this.pSpillmeny.Controls.Add(this.btSpillmenyS);
+            this.pSpillmeny.Controls.Add(this.lNavnSpill);
+            this.pSpillmeny.Controls.Add(this.pbSpillmeny);
+            this.pSpillmeny.Location = new System.Drawing.Point(797, 574);
+            this.pSpillmeny.Name = "pSpillmeny";
+            this.pSpillmeny.Size = new System.Drawing.Size(37, 35);
+            this.pSpillmeny.TabIndex = 12;
+            // 
+            // btSpillmenyI
+            // 
+            this.btSpillmenyI.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSpillmenyI.Location = new System.Drawing.Point(319, 411);
+            this.btSpillmenyI.Name = "btSpillmenyI";
+            this.btSpillmenyI.Size = new System.Drawing.Size(343, 71);
+            this.btSpillmenyI.TabIndex = 3;
+            this.btSpillmenyI.Text = "Instruksjon";
+            this.btSpillmenyI.UseVisualStyleBackColor = true;
+            // 
+            // btSpillmenyT
+            // 
+            this.btSpillmenyT.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSpillmenyT.Location = new System.Drawing.Point(319, 305);
+            this.btSpillmenyT.Name = "btSpillmenyT";
+            this.btSpillmenyT.Size = new System.Drawing.Size(343, 71);
+            this.btSpillmenyT.TabIndex = 2;
+            this.btSpillmenyT.Text = "Toppresultater";
+            this.btSpillmenyT.UseVisualStyleBackColor = true;
+            // 
+            // btSpillmenyS
+            // 
+            this.btSpillmenyS.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSpillmenyS.Location = new System.Drawing.Point(319, 202);
+            this.btSpillmenyS.Name = "btSpillmenyS";
+            this.btSpillmenyS.Size = new System.Drawing.Size(343, 71);
+            this.btSpillmenyS.TabIndex = 1;
+            this.btSpillmenyS.Text = "Spill";
+            this.btSpillmenyS.UseVisualStyleBackColor = true;
+            // 
+            // lNavnSpill
+            // 
+            this.lNavnSpill.AutoSize = true;
+            this.lNavnSpill.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNavnSpill.Location = new System.Drawing.Point(321, 71);
+            this.lNavnSpill.Name = "lNavnSpill";
+            this.lNavnSpill.Size = new System.Drawing.Size(337, 63);
+            this.lNavnSpill.TabIndex = 0;
+            this.lNavnSpill.Text = "Navn på spill";
+            // 
+            // pbSpillmeny
+            // 
+            this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
+            this.pbSpillmeny.Name = "pbSpillmeny";
+            this.pbSpillmeny.Size = new System.Drawing.Size(37, 35);
+            this.pbSpillmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSpillmeny.TabIndex = 4;
+            this.pbSpillmeny.TabStop = false;
+            // 
             // FigurTimer
             // 
             this.FigurTimer.Interval = 1000;
@@ -204,17 +205,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 621);
-            this.Controls.Add(this.pSpillmeny);
             this.Controls.Add(this.pStartmeny);
+            this.Controls.Add(this.pSpillmeny);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pStartmeny.ResumeLayout(false);
             this.pStartmeny.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).EndInit();
             this.pSpillmeny.ResumeLayout(false);
             this.pSpillmeny.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).EndInit();
             this.ResumeLayout(false);
 

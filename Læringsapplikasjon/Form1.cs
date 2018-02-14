@@ -21,6 +21,7 @@ namespace Læringsapplikasjon
         private void Form1_Load(object sender, EventArgs e)
         {
             pStartmeny.Dock = DockStyle.Fill;
+            pSpillmeny.Visible = false;
         }
 
         private void btStartF_Click(object sender, EventArgs e)

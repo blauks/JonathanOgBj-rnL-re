@@ -42,23 +42,29 @@ namespace Læringsapplikasjon
         private void StartmenyHover(object sender, EventArgs e)
         {
             Button bt = sender as Button;
-            
+
+            bool TrueOrFalse = false;
+
             if(bt == btStartF)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.figurspill;
+                TrueOrFalse = true;
             }
             else if(bt == btStartT)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.tallspill;
+                TrueOrFalse = true;
             }
             else if(bt == btStartD)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.dyrspill;
+                TrueOrFalse = true;
             }
             else
             {
-                pbStartmeny.BackColor = Color.Gray;
+                TrueOrFalse = false;
             }
+            pbStartmeny.Visible = TrueOrFalse;
 
         }
 

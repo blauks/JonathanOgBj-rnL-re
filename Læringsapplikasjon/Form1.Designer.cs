@@ -41,14 +41,12 @@
             this.btStartT = new System.Windows.Forms.Button();
             this.btStartF = new System.Windows.Forms.Button();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.pStartmeny.SuspendLayout();
             this.pSpillmeny.SuspendLayout();
             this.SuspendLayout();
             // 
             // pStartmeny
             // 
-            this.pStartmeny.Controls.Add(this.button1);
             this.pStartmeny.Controls.Add(this.pSpillmeny);
             this.pStartmeny.Controls.Add(this.labelStartMeny);
             this.pStartmeny.Controls.Add(this.btStartD);
@@ -169,16 +167,6 @@
             this.FigurTimer.Interval = 1000;
             this.FigurTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(401, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(203, 203);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Tall";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,7 +198,6 @@
         private System.Windows.Forms.Button btSpillmenyS;
         private System.Windows.Forms.Label lNavnSpill;
         private System.Windows.Forms.Timer FigurTimer;
-        private System.Windows.Forms.Button button1;
     }
 }
 

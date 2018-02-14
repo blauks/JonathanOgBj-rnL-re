@@ -40,7 +40,6 @@ namespace Læringsapplikasjon
 
         private void StartmenyHover(object sender, EventArgs e) //hover
         {
-<<<<<<< HEAD
             Button bt = sender as Button;
 
             if(bt == btStartF)
@@ -56,9 +55,6 @@ namespace Læringsapplikasjon
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.dyrspill;
             }
             
-=======
-
->>>>>>> 0e01aeca458d4974b3ef052add4d17c3b093237e
         }
     }
 }

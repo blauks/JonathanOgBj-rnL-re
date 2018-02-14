@@ -21,6 +21,7 @@ namespace Læringsapplikasjon
         private void Form1_Load(object sender, EventArgs e)
         {
             pStartmeny.Dock = DockStyle.Fill;
+            pSpillmeny.Visible = false;
         }
 
         private void btStartF_Click(object sender, EventArgs e)
@@ -40,7 +41,26 @@ namespace Læringsapplikasjon
 
         private void StartmenyHover(object sender, EventArgs e)
         {
+            Button bt = sender as Button;
+            
+            if(bt == btStartF)
+            {
+                pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.figurspill;
+            }
+            else if(bt == btStartT)
+            {
+                pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.tallspill;
+            }
+            else if(bt == btStartD)
+            {
+                pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.dyrspill;
+            }
+            else
+            {
+                pbStartmeny.BackColor = Color.Gray;
+            }
 
         }
+
     }
 }

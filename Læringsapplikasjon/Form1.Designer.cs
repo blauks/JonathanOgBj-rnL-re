@@ -35,19 +35,20 @@
             this.btSpillmenyT = new System.Windows.Forms.Button();
             this.btSpillmenyS = new System.Windows.Forms.Button();
             this.lNavnSpill = new System.Windows.Forms.Label();
-            this.pbSpillmeny = new System.Windows.Forms.PictureBox();
             this.labelStartMeny = new System.Windows.Forms.Label();
             this.btStartD = new System.Windows.Forms.Button();
             this.btStartT = new System.Windows.Forms.Button();
             this.btStartF = new System.Windows.Forms.Button();
-            this.pbStartmeny = new System.Windows.Forms.PictureBox();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
             this.Ubrkuelig_Shit = new System.Windows.Forms.PictureBox();
+            this.pbSpillmeny = new System.Windows.Forms.PictureBox();
+            this.pbStartmeny = new System.Windows.Forms.PictureBox();
+            this.pFigurspill = new System.Windows.Forms.Panel();
             this.pStartmeny.SuspendLayout();
             this.pSpillmeny.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).BeginInit();
             this.SuspendLayout();
             // 
             // pStartmeny
@@ -58,10 +59,9 @@
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
             this.pStartmeny.Controls.Add(this.pbStartmeny);
-            this.pStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pStartmeny.Location = new System.Drawing.Point(0, 0);
+            this.pStartmeny.Location = new System.Drawing.Point(865, 537);
             this.pStartmeny.Name = "pStartmeny";
-            this.pStartmeny.Size = new System.Drawing.Size(1004, 621);
+            this.pStartmeny.Size = new System.Drawing.Size(127, 72);
             this.pStartmeny.TabIndex = 7;
             // 
             // pSpillmeny
@@ -71,9 +71,13 @@
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
             this.pSpillmeny.Controls.Add(this.lNavnSpill);
             this.pSpillmeny.Controls.Add(this.pbSpillmeny);
+<<<<<<< HEAD
             this.pSpillmeny.Location = new System.Drawing.Point(3, 12);
+=======
+            this.pSpillmeny.Location = new System.Drawing.Point(12, 12);
+>>>>>>> 0e01aeca458d4974b3ef052add4d17c3b093237e
             this.pSpillmeny.Name = "pSpillmeny";
-            this.pSpillmeny.Size = new System.Drawing.Size(593, 417);
+            this.pSpillmeny.Size = new System.Drawing.Size(132, 92);
             this.pSpillmeny.TabIndex = 12;
             // 
             // btSpillmenyI
@@ -115,15 +119,6 @@
             this.lNavnSpill.Size = new System.Drawing.Size(337, 63);
             this.lNavnSpill.TabIndex = 0;
             this.lNavnSpill.Text = "Navn på spill";
-            // 
-            // pbSpillmeny
-            // 
-            this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
-            this.pbSpillmeny.Name = "pbSpillmeny";
-            this.pbSpillmeny.Size = new System.Drawing.Size(593, 417);
-            this.pbSpillmeny.TabIndex = 4;
-            this.pbSpillmeny.TabStop = false;
             // 
             // labelStartMeny
             // 
@@ -169,6 +164,7 @@
             this.btStartF.Click += new System.EventHandler(this.btStartF_Click);
             this.btStartF.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
+<<<<<<< HEAD
             // pbStartmeny
             // 
             this.pbStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -180,6 +176,8 @@
             this.pbStartmeny.TabStop = false;
             //test
             // 
+=======
+>>>>>>> 0e01aeca458d4974b3ef052add4d17c3b093237e
             // FigurTimer
             // 
             this.FigurTimer.Interval = 1000;
@@ -193,11 +191,42 @@
             this.Ubrkuelig_Shit.TabIndex = 13;
             this.Ubrkuelig_Shit.TabStop = false;
             // 
+            // pbSpillmeny
+            // 
+            this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
+            this.pbSpillmeny.Name = "pbSpillmeny";
+            this.pbSpillmeny.Size = new System.Drawing.Size(132, 92);
+            this.pbSpillmeny.TabIndex = 4;
+            this.pbSpillmeny.TabStop = false;
+            // 
+            // pbStartmeny
+            // 
+            this.pbStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbStartmeny.Location = new System.Drawing.Point(0, 0);
+            this.pbStartmeny.Name = "pbStartmeny";
+            this.pbStartmeny.Size = new System.Drawing.Size(127, 72);
+            this.pbStartmeny.TabIndex = 13;
+            this.pbStartmeny.TabStop = false;
+            // 
+            // pFigurspill
+            // 
+            this.pFigurspill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pFigurspill.Location = new System.Drawing.Point(0, 0);
+            this.pFigurspill.Name = "pFigurspill";
+            this.pFigurspill.Size = new System.Drawing.Size(1004, 621);
+            this.pFigurspill.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 621);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.pFigurspill);
+            this.Controls.Add(this.pSpillmeny);
+>>>>>>> 0e01aeca458d4974b3ef052add4d17c3b093237e
             this.Controls.Add(this.pStartmeny);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -206,9 +235,9 @@
             this.pStartmeny.PerformLayout();
             this.pSpillmeny.ResumeLayout(false);
             this.pSpillmeny.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpillmeny)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,6 +258,7 @@
         private System.Windows.Forms.PictureBox Ubrkuelig_Shit;
         private System.Windows.Forms.PictureBox pbSpillmeny;
         private System.Windows.Forms.PictureBox pbStartmeny;
+        private System.Windows.Forms.Panel pFigurspill;
     }
 }
 

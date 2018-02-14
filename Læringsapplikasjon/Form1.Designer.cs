@@ -52,6 +52,7 @@
             // 
             // pStartmeny
             // 
+            this.pStartmeny.Controls.Add(this.pSpillmeny);
             this.pStartmeny.Controls.Add(this.labelStartMeny);
             this.pStartmeny.Controls.Add(this.btStartD);
             this.pStartmeny.Controls.Add(this.btStartT);
@@ -70,7 +71,7 @@
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
             this.pSpillmeny.Controls.Add(this.lNavnSpill);
             this.pSpillmeny.Controls.Add(this.pbSpillmeny);
-            this.pSpillmeny.Location = new System.Drawing.Point(35, 100);
+            this.pSpillmeny.Location = new System.Drawing.Point(3, 12);
             this.pSpillmeny.Name = "pSpillmeny";
             this.pSpillmeny.Size = new System.Drawing.Size(593, 417);
             this.pSpillmeny.TabIndex = 12;
@@ -177,6 +178,7 @@
             this.pbStartmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStartmeny.TabIndex = 13;
             this.pbStartmeny.TabStop = false;
+            //test
             // 
             // FigurTimer
             // 
@@ -196,7 +198,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 621);
-            this.Controls.Add(this.pSpillmeny);
             this.Controls.Add(this.pStartmeny);
             this.Name = "Form1";
             this.Text = "Form1";

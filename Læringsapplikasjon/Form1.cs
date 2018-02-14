@@ -37,5 +37,10 @@ namespace Læringsapplikasjon
         {
 
         }
+
+        private void StartmenyHover(object sender, EventArgs e)
+        {
+
+        }
     }
 }

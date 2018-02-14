@@ -41,8 +41,10 @@
             this.btStartT = new System.Windows.Forms.Button();
             this.btStartF = new System.Windows.Forms.Button();
             this.FigurTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pStartmeny.SuspendLayout();
             this.pSpillmeny.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pStartmeny
@@ -52,6 +54,7 @@
             this.pStartmeny.Controls.Add(this.btStartD);
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
+            this.pStartmeny.Controls.Add(this.pictureBox1);
             this.pStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pStartmeny.Location = new System.Drawing.Point(0, 0);
             this.pStartmeny.Name = "pStartmeny";
@@ -139,6 +142,7 @@
             this.btStartD.TabIndex = 10;
             this.btStartD.Text = "Dyr";
             this.btStartD.UseVisualStyleBackColor = true;
+            this.btStartD.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // btStartT
             // 
@@ -149,6 +153,7 @@
             this.btStartT.TabIndex = 8;
             this.btStartT.Text = "Tall";
             this.btStartT.UseVisualStyleBackColor = true;
+            this.btStartT.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // btStartF
             // 
@@ -160,12 +165,20 @@
             this.btStartF.Text = "Figurer";
             this.btStartF.UseVisualStyleBackColor = true;
             this.btStartF.Click += new System.EventHandler(this.btStartF_Click);
-            this.btStartF.MouseHover += new System.EventHandler(this.mh);
+            this.btStartF.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // FigurTimer
             // 
             this.FigurTimer.Interval = 1000;
             this.FigurTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1004, 621);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -180,6 +193,7 @@
             this.pStartmeny.PerformLayout();
             this.pSpillmeny.ResumeLayout(false);
             this.pSpillmeny.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,6 +212,7 @@
         private System.Windows.Forms.Button btSpillmenyS;
         private System.Windows.Forms.Label lNavnSpill;
         private System.Windows.Forms.Timer FigurTimer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

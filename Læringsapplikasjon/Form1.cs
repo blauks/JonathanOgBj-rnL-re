@@ -18,8 +18,6 @@ namespace Læringsapplikasjon
             InitializeComponent();
         }
 
-        int hvilketSpill = 0;
-
         private void Form1_Load(object sender, EventArgs e)
         {
             pStartmeny.Dock = DockStyle.Fill;
@@ -42,7 +40,7 @@ namespace Læringsapplikasjon
 
         private void StartmenyHover(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

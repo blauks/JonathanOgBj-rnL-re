@@ -52,10 +52,9 @@
             this.pStartmeny.Controls.Add(this.btStartD);
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
-            this.pStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pStartmeny.Location = new System.Drawing.Point(0, 0);
+            this.pStartmeny.Location = new System.Drawing.Point(12, 12);
             this.pStartmeny.Name = "pStartmeny";
-            this.pStartmeny.Size = new System.Drawing.Size(1004, 621);
+            this.pStartmeny.Size = new System.Drawing.Size(992, 609);
             this.pStartmeny.TabIndex = 7;
             // 
             // pSpillmeny

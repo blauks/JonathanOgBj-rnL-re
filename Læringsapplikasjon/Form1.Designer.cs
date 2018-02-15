@@ -42,7 +42,6 @@
             this.lNavnSpill = new System.Windows.Forms.Label();
             this.pbSpillmeny = new System.Windows.Forms.PictureBox();
             this.FigurspillTimer = new System.Windows.Forms.Timer(this.components);
-            this.Ubruklig_shit = new System.Windows.Forms.Panel();
             this.pFigurspill = new System.Windows.Forms.Panel();
             this.lFigurspillPoeng = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             this.btFigurspillFi = new System.Windows.Forms.Button();
             this.btFigurspillTr = new System.Windows.Forms.Button();
             this.pbFigurspill = new System.Windows.Forms.PictureBox();
-            this.Ubrkuelig_Shit = new System.Windows.Forms.PictureBox();
             this.RegnespillTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pRegnespill = new System.Windows.Forms.Panel();
@@ -73,14 +71,14 @@
             this.lRegnespillRO = new System.Windows.Forms.Label();
             this.lRegnespillT1 = new System.Windows.Forms.Label();
             this.pDyrespill = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lRegnespillT = new System.Windows.Forms.Label();
+            this.btDyrespillH = new System.Windows.Forms.Button();
+            this.btDyrespillT = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btDyrespillT = new System.Windows.Forms.Button();
-            this.btDyrespillH = new System.Windows.Forms.Button();
-            this.lRegnespillT = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pStartmeny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
             this.pSpillmeny.SuspendLayout();
@@ -88,13 +86,12 @@
             this.pFigurspill.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFigurspill)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).BeginInit();
             this.pRegnespill.SuspendLayout();
             this.pDyrespill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pStartmeny
@@ -104,9 +101,10 @@
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
             this.pStartmeny.Controls.Add(this.pbStartmeny);
-            this.pStartmeny.Location = new System.Drawing.Point(906, 545);
+            this.pStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pStartmeny.Location = new System.Drawing.Point(0, 0);
             this.pStartmeny.Name = "pStartmeny";
-            this.pStartmeny.Size = new System.Drawing.Size(86, 64);
+            this.pStartmeny.Size = new System.Drawing.Size(1004, 621);
             this.pStartmeny.TabIndex = 7;
             // 
             // labelStartMeny
@@ -128,6 +126,7 @@
             this.btStartD.TabIndex = 10;
             this.btStartD.Text = "Dyr";
             this.btStartD.UseVisualStyleBackColor = true;
+            this.btStartD.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartmenyClick);
             this.btStartD.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // btStartT
@@ -139,6 +138,7 @@
             this.btStartT.TabIndex = 8;
             this.btStartT.Text = "Tall";
             this.btStartT.UseVisualStyleBackColor = true;
+            this.btStartT.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartmenyClick);
             this.btStartT.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // btStartF
@@ -150,7 +150,7 @@
             this.btStartF.TabIndex = 7;
             this.btStartF.Text = "Figurer";
             this.btStartF.UseVisualStyleBackColor = true;
-            this.btStartF.Click += new System.EventHandler(this.btStartF_Click);
+            this.btStartF.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartmenyClick);
             this.btStartF.MouseHover += new System.EventHandler(this.StartmenyHover);
             // 
             // pbStartmeny
@@ -158,7 +158,7 @@
             this.pbStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbStartmeny.Location = new System.Drawing.Point(0, 0);
             this.pbStartmeny.Name = "pbStartmeny";
-            this.pbStartmeny.Size = new System.Drawing.Size(86, 64);
+            this.pbStartmeny.Size = new System.Drawing.Size(1004, 621);
             this.pbStartmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStartmeny.TabIndex = 13;
             this.pbStartmeny.TabStop = false;
@@ -230,14 +230,6 @@
             // 
             this.FigurspillTimer.Interval = 1000;
             this.FigurspillTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
-            // 
-            // Ubruklig_shit
-            // 
-            this.Ubruklig_shit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Ubruklig_shit.Location = new System.Drawing.Point(0, 0);
-            this.Ubruklig_shit.Name = "Ubruklig_shit";
-            this.Ubruklig_shit.Size = new System.Drawing.Size(10, 10);
-            this.Ubruklig_shit.TabIndex = 13;
             // 
             // pFigurspill
             // 
@@ -362,14 +354,6 @@
             this.pbFigurspill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFigurspill.TabIndex = 0;
             this.pbFigurspill.TabStop = false;
-            // 
-            // Ubrkuelig_Shit
-            // 
-            this.Ubrkuelig_Shit.Location = new System.Drawing.Point(0, 0);
-            this.Ubrkuelig_Shit.Name = "Ubrkuelig_Shit";
-            this.Ubrkuelig_Shit.Size = new System.Drawing.Size(1004, 621);
-            this.Ubrkuelig_Shit.TabIndex = 13;
-            this.Ubrkuelig_Shit.TabStop = false;
             // 
             // pRegnespill
             // 
@@ -526,27 +510,49 @@
             this.pDyrespill.Controls.Add(this.pictureBox4);
             this.pDyrespill.Controls.Add(this.pictureBox1);
             this.pDyrespill.Controls.Add(this.pictureBox3);
-            this.pDyrespill.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pDyrespill.Location = new System.Drawing.Point(0, 0);
+            this.pDyrespill.Location = new System.Drawing.Point(429, 544);
             this.pDyrespill.Name = "pDyrespill";
-            this.pDyrespill.Size = new System.Drawing.Size(1004, 621);
+            this.pDyrespill.Size = new System.Drawing.Size(82, 71);
             this.pDyrespill.TabIndex = 15;
             // 
-            // pictureBox3
+            // label9
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(54, 56);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(327, 228);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(856, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 17);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Tid igjen:";
             // 
-            // pictureBox1
+            // lRegnespillT
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(425, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 228);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.lRegnespillT.AutoSize = true;
+            this.lRegnespillT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRegnespillT.Location = new System.Drawing.Point(878, 170);
+            this.lRegnespillT.Name = "lRegnespillT";
+            this.lRegnespillT.Size = new System.Drawing.Size(0, 25);
+            this.lRegnespillT.TabIndex = 8;
+            // 
+            // btDyrespillH
+            // 
+            this.btDyrespillH.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDyrespillH.Location = new System.Drawing.Point(822, 56);
+            this.btDyrespillH.Name = "btDyrespillH";
+            this.btDyrespillH.Size = new System.Drawing.Size(145, 60);
+            this.btDyrespillH.TabIndex = 7;
+            this.btDyrespillH.Text = "Hør lyd igjen";
+            this.btDyrespillH.UseVisualStyleBackColor = true;
+            // 
+            // btDyrespillT
+            // 
+            this.btDyrespillT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDyrespillT.Location = new System.Drawing.Point(876, 568);
+            this.btDyrespillT.Name = "btDyrespillT";
+            this.btDyrespillT.Size = new System.Drawing.Size(100, 30);
+            this.btDyrespillT.TabIndex = 6;
+            this.btDyrespillT.Text = "Tilbake";
+            this.btDyrespillT.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -564,44 +570,21 @@
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 
-            // btDyrespillT
+            // pictureBox1
             // 
-            this.btDyrespillT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDyrespillT.Location = new System.Drawing.Point(876, 568);
-            this.btDyrespillT.Name = "btDyrespillT";
-            this.btDyrespillT.Size = new System.Drawing.Size(100, 30);
-            this.btDyrespillT.TabIndex = 6;
-            this.btDyrespillT.Text = "Tilbake";
-            this.btDyrespillT.UseVisualStyleBackColor = true;
+            this.pictureBox1.Location = new System.Drawing.Point(425, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(327, 228);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // btDyrespillH
+            // pictureBox3
             // 
-            this.btDyrespillH.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDyrespillH.Location = new System.Drawing.Point(822, 56);
-            this.btDyrespillH.Name = "btDyrespillH";
-            this.btDyrespillH.Size = new System.Drawing.Size(145, 60);
-            this.btDyrespillH.TabIndex = 7;
-            this.btDyrespillH.Text = "Hør lyd igjen";
-            this.btDyrespillH.UseVisualStyleBackColor = true;
-            // 
-            // lRegnespillT
-            // 
-            this.lRegnespillT.AutoSize = true;
-            this.lRegnespillT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRegnespillT.Location = new System.Drawing.Point(878, 170);
-            this.lRegnespillT.Name = "lRegnespillT";
-            this.lRegnespillT.Size = new System.Drawing.Size(0, 25);
-            this.lRegnespillT.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(856, 141);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Tid igjen:";
+            this.pictureBox3.Location = new System.Drawing.Point(54, 56);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(327, 228);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // Form1
             // 
@@ -627,15 +610,14 @@
             this.pFigurspill.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFigurspill)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Ubrkuelig_Shit)).EndInit();
             this.pRegnespill.ResumeLayout(false);
             this.pRegnespill.PerformLayout();
             this.pDyrespill.ResumeLayout(false);
             this.pDyrespill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,10 +635,8 @@
         private System.Windows.Forms.Button btSpillmenyS;
         private System.Windows.Forms.Label lNavnSpill;
         private System.Windows.Forms.Timer FigurspillTimer;
-        private System.Windows.Forms.PictureBox Ubrkuelig_Shit;
         private System.Windows.Forms.PictureBox pbSpillmeny;
         private System.Windows.Forms.PictureBox pbStartmeny;
-        private System.Windows.Forms.Panel Ubruklig_shit;
         private System.Windows.Forms.Panel pFigurspill;
         private System.Windows.Forms.PictureBox pbFigurspill;
         private System.Windows.Forms.Timer RegnespillTimer;

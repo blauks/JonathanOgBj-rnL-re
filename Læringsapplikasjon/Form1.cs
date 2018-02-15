@@ -14,20 +14,26 @@ namespace Læringsapplikasjon
     {
         public Form1()
         {
-            //Hei det er meg Bjørn!!!!
             InitializeComponent();
         }
+
+        //Globale variabler:
+        int hvilketSpill;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             pStartmeny.Dock = DockStyle.Fill;
+            pSpillmeny.Dock = DockStyle.Fill;
+            pFigurspill.Dock = DockStyle.Fill;
+            pRegnespill.Dock = DockStyle.Fill;
+            pDyrespill.Dock = DockStyle.Fill;
             pSpillmeny.Visible = false;
+            pFigurspill.Visible = false;
+            pRegnespill.Visible = false;
+            pDyrespill.Visible = false;
         }
 
-        private void btStartF_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void mh(object sender, EventArgs e)
         {
@@ -38,6 +44,8 @@ namespace Læringsapplikasjon
         {
 
         }
+
+
 
         private void StartmenyHover(object sender, EventArgs e) //hover
         {
@@ -58,5 +66,14 @@ namespace Læringsapplikasjon
             
         }
 
+        private void StartmenyClick(object sender, MouseEventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt == btStartF)
+            {
+                hvilketSpill = 0;
+
+            }
+        }
     }
 }

@@ -88,5 +88,20 @@
   <ItemGroup>
     <None Include="bin\Debug\tallspill.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LP_Femkant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LP_Firkant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LP_Sirkel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LP_Stjerne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LP_Trekant.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

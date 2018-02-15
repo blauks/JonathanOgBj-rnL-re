@@ -79,6 +79,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btTilbakeSpillMeny = new System.Windows.Forms.Button();
             this.pStartmeny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStartmeny)).BeginInit();
             this.pSpillmeny.SuspendLayout();
@@ -96,7 +97,11 @@
             // 
             // pStartmeny
             // 
+            this.pStartmeny.Controls.Add(this.pFigurspill);
+            this.pStartmeny.Controls.Add(this.pSpillmeny);
+            this.pStartmeny.Controls.Add(this.pRegnespill);
             this.pStartmeny.Controls.Add(this.labelStartMeny);
+            this.pStartmeny.Controls.Add(this.pDyrespill);
             this.pStartmeny.Controls.Add(this.btStartD);
             this.pStartmeny.Controls.Add(this.btStartT);
             this.pStartmeny.Controls.Add(this.btStartF);
@@ -165,16 +170,16 @@
             // 
             // pSpillmeny
             // 
+            this.pSpillmeny.Controls.Add(this.btTilbakeSpillMeny);
             this.pSpillmeny.Controls.Add(this.btSpillmenyI);
             this.pSpillmeny.Controls.Add(this.btSpillmenyT);
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
             this.pSpillmeny.Controls.Add(this.lNavnSpill);
             this.pSpillmeny.Controls.Add(this.pbSpillmeny);
-            this.pSpillmeny.Location = new System.Drawing.Point(804, 539);
+            this.pSpillmeny.Location = new System.Drawing.Point(277, 213);
             this.pSpillmeny.Name = "pSpillmeny";
-            this.pSpillmeny.Size = new System.Drawing.Size(68, 70);
+            this.pSpillmeny.Size = new System.Drawing.Size(724, 408);
             this.pSpillmeny.TabIndex = 12;
-            this.pSpillmeny.Visible = false;
             // 
             // btSpillmenyI
             // 
@@ -205,6 +210,7 @@
             this.btSpillmenyS.TabIndex = 1;
             this.btSpillmenyS.Text = "Spill";
             this.btSpillmenyS.UseVisualStyleBackColor = true;
+            this.btSpillmenyS.Click += new System.EventHandler(this.btSpillmenyS_Click);
             // 
             // lNavnSpill
             // 
@@ -221,14 +227,14 @@
             this.pbSpillmeny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbSpillmeny.Location = new System.Drawing.Point(0, 0);
             this.pbSpillmeny.Name = "pbSpillmeny";
-            this.pbSpillmeny.Size = new System.Drawing.Size(68, 70);
+            this.pbSpillmeny.Size = new System.Drawing.Size(724, 408);
             this.pbSpillmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbSpillmeny.TabIndex = 4;
             this.pbSpillmeny.TabStop = false;
             // 
             // FigurspillTimer
             // 
-            this.FigurspillTimer.Interval = 1000;
+            this.FigurspillTimer.Interval = 400;
             this.FigurspillTimer.Tick += new System.EventHandler(this.FigurTimer_Tick);
             // 
             // pFigurspill
@@ -239,10 +245,12 @@
             this.pFigurspill.Controls.Add(this.btFigurspillTi);
             this.pFigurspill.Controls.Add(this.panel1);
             this.pFigurspill.Controls.Add(this.pbFigurspill);
-            this.pFigurspill.Location = new System.Drawing.Point(679, 550);
+            this.pFigurspill.Location = new System.Drawing.Point(934, 3);
             this.pFigurspill.Name = "pFigurspill";
-            this.pFigurspill.Size = new System.Drawing.Size(98, 59);
+            this.pFigurspill.Size = new System.Drawing.Size(75, 177);
             this.pFigurspill.TabIndex = 13;
+            this.pFigurspill.Tag = "FigurspillKnapper";
+            this.pFigurspill.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // lFigurspillPoeng
             // 
@@ -281,6 +289,7 @@
             this.btFigurspillTi.TabIndex = 3;
             this.btFigurspillTi.Text = "Tilbake";
             this.btFigurspillTi.UseVisualStyleBackColor = true;
+            this.btFigurspillTi.Click += new System.EventHandler(this.TilbakeKnapp);
             // 
             // panel1
             // 
@@ -291,60 +300,85 @@
             this.panel1.Controls.Add(this.btFigurspillFi);
             this.panel1.Controls.Add(this.btFigurspillTr);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, -41);
+            this.panel1.Location = new System.Drawing.Point(0, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(98, 100);
+            this.panel1.Size = new System.Drawing.Size(75, 100);
             this.panel1.TabIndex = 1;
             // 
             // btFigurspillFe
             // 
+            this.btFigurspillFe.BackColor = System.Drawing.Color.Red;
             this.btFigurspillFe.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFigurspillFe.ForeColor = System.Drawing.Color.Black;
             this.btFigurspillFe.Location = new System.Drawing.Point(838, 18);
             this.btFigurspillFe.Name = "btFigurspillFe";
             this.btFigurspillFe.Size = new System.Drawing.Size(126, 64);
             this.btFigurspillFe.TabIndex = 6;
+            this.btFigurspillFe.Tag = "FigurspillKnapper";
             this.btFigurspillFe.Text = "Femkant";
-            this.btFigurspillFe.UseVisualStyleBackColor = true;
+            this.btFigurspillFe.UseVisualStyleBackColor = false;
+            this.btFigurspillFe.ClientSizeChanged += new System.EventHandler(this.FigurspillKnapper);
+            this.btFigurspillFe.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // btFigurspillSt
             // 
+            this.btFigurspillSt.BackColor = System.Drawing.Color.Red;
             this.btFigurspillSt.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFigurspillSt.ForeColor = System.Drawing.Color.Black;
             this.btFigurspillSt.Location = new System.Drawing.Point(647, 18);
             this.btFigurspillSt.Name = "btFigurspillSt";
             this.btFigurspillSt.Size = new System.Drawing.Size(126, 64);
             this.btFigurspillSt.TabIndex = 5;
+            this.btFigurspillSt.Tag = "FigurspillKnapper";
             this.btFigurspillSt.Text = "Stjerne";
-            this.btFigurspillSt.UseVisualStyleBackColor = true;
+            this.btFigurspillSt.UseVisualStyleBackColor = false;
+            this.btFigurspillSt.ClientSizeChanged += new System.EventHandler(this.FigurspillKnapper);
+            this.btFigurspillSt.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // btFigurspillSi
             // 
+            this.btFigurspillSi.BackColor = System.Drawing.Color.Red;
             this.btFigurspillSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFigurspillSi.ForeColor = System.Drawing.Color.Black;
             this.btFigurspillSi.Location = new System.Drawing.Point(451, 18);
             this.btFigurspillSi.Name = "btFigurspillSi";
             this.btFigurspillSi.Size = new System.Drawing.Size(126, 64);
             this.btFigurspillSi.TabIndex = 4;
+            this.btFigurspillSi.Tag = "FigurspillKnapper";
             this.btFigurspillSi.Text = "Sirkel";
-            this.btFigurspillSi.UseVisualStyleBackColor = true;
+            this.btFigurspillSi.UseVisualStyleBackColor = false;
+            this.btFigurspillSi.ClientSizeChanged += new System.EventHandler(this.FigurspillKnapper);
+            this.btFigurspillSi.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // btFigurspillFi
             // 
+            this.btFigurspillFi.BackColor = System.Drawing.Color.Red;
             this.btFigurspillFi.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFigurspillFi.ForeColor = System.Drawing.Color.Black;
             this.btFigurspillFi.Location = new System.Drawing.Point(249, 18);
             this.btFigurspillFi.Name = "btFigurspillFi";
             this.btFigurspillFi.Size = new System.Drawing.Size(126, 64);
             this.btFigurspillFi.TabIndex = 3;
+            this.btFigurspillFi.Tag = "FigurspillKnapper";
             this.btFigurspillFi.Text = "Firkant";
-            this.btFigurspillFi.UseVisualStyleBackColor = true;
+            this.btFigurspillFi.UseVisualStyleBackColor = false;
+            this.btFigurspillFi.ClientSizeChanged += new System.EventHandler(this.FigurspillKnapper);
+            this.btFigurspillFi.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // btFigurspillTr
             // 
+            this.btFigurspillTr.BackColor = System.Drawing.Color.Red;
             this.btFigurspillTr.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFigurspillTr.ForeColor = System.Drawing.Color.Black;
             this.btFigurspillTr.Location = new System.Drawing.Point(50, 18);
             this.btFigurspillTr.Name = "btFigurspillTr";
             this.btFigurspillTr.Size = new System.Drawing.Size(126, 64);
             this.btFigurspillTr.TabIndex = 2;
+            this.btFigurspillTr.Tag = "FigurspillKnapper";
             this.btFigurspillTr.Text = "Trekant";
-            this.btFigurspillTr.UseVisualStyleBackColor = true;
+            this.btFigurspillTr.UseVisualStyleBackColor = false;
+            this.btFigurspillTr.ClientSizeChanged += new System.EventHandler(this.FigurspillKnapper);
+            this.btFigurspillTr.Click += new System.EventHandler(this.FigurspillKnapper);
             // 
             // pbFigurspill
             // 
@@ -370,9 +404,9 @@
             this.pRegnespill.Controls.Add(this.lRegnespillT2);
             this.pRegnespill.Controls.Add(this.lRegnespillRO);
             this.pRegnespill.Controls.Add(this.lRegnespillT1);
-            this.pRegnespill.Location = new System.Drawing.Point(543, 539);
+            this.pRegnespill.Location = new System.Drawing.Point(840, 541);
             this.pRegnespill.Name = "pRegnespill";
-            this.pRegnespill.Size = new System.Drawing.Size(107, 76);
+            this.pRegnespill.Size = new System.Drawing.Size(76, 56);
             this.pRegnespill.TabIndex = 14;
             // 
             // label6
@@ -422,6 +456,7 @@
             this.btRegnespillT.TabIndex = 8;
             this.btRegnespillT.Text = "Tilbake";
             this.btRegnespillT.UseVisualStyleBackColor = true;
+            this.btRegnespillT.Click += new System.EventHandler(this.TilbakeKnapp);
             // 
             // btRegnespillS
             // 
@@ -510,9 +545,9 @@
             this.pDyrespill.Controls.Add(this.pictureBox4);
             this.pDyrespill.Controls.Add(this.pictureBox1);
             this.pDyrespill.Controls.Add(this.pictureBox3);
-            this.pDyrespill.Location = new System.Drawing.Point(429, 544);
+            this.pDyrespill.Location = new System.Drawing.Point(880, 473);
             this.pDyrespill.Name = "pDyrespill";
-            this.pDyrespill.Size = new System.Drawing.Size(82, 71);
+            this.pDyrespill.Size = new System.Drawing.Size(83, 54);
             this.pDyrespill.TabIndex = 15;
             // 
             // label9
@@ -553,6 +588,7 @@
             this.btDyrespillT.TabIndex = 6;
             this.btDyrespillT.Text = "Tilbake";
             this.btDyrespillT.UseVisualStyleBackColor = true;
+            this.btDyrespillT.Click += new System.EventHandler(this.TilbakeKnapp);
             // 
             // pictureBox2
             // 
@@ -586,16 +622,23 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
+            // btTilbakeSpillMeny
+            // 
+            this.btTilbakeSpillMeny.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTilbakeSpillMeny.Location = new System.Drawing.Point(851, 569);
+            this.btTilbakeSpillMeny.Name = "btTilbakeSpillMeny";
+            this.btTilbakeSpillMeny.Size = new System.Drawing.Size(124, 37);
+            this.btTilbakeSpillMeny.TabIndex = 5;
+            this.btTilbakeSpillMeny.Text = "Tilbake";
+            this.btTilbakeSpillMeny.UseVisualStyleBackColor = true;
+            this.btTilbakeSpillMeny.Click += new System.EventHandler(this.TilbakeKnapp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 621);
-            this.Controls.Add(this.pDyrespill);
-            this.Controls.Add(this.pRegnespill);
-            this.Controls.Add(this.pFigurspill);
             this.Controls.Add(this.pStartmeny);
-            this.Controls.Add(this.pSpillmeny);
             this.Name = "Form1";
             this.Text = "Form1";
             this.TopMost = true;
@@ -674,6 +717,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btTilbakeSpillMeny;
     }
 }
 

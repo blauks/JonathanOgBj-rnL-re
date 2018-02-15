@@ -20,6 +20,12 @@ namespace Læringsapplikasjon
         //Globale variabler:
         int hvilketSpill;
         int Poeng = 0;
+        int RandomFigurInt;
+        int nedtelling = 10;
+        int RegneSpillSvar;
+        int HørLydIgjen = 3;
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             pStartmeny.Dock = DockStyle.Fill;
@@ -84,11 +90,11 @@ namespace Læringsapplikasjon
             {
                 pSpillmeny.Visible = false;
             }
-            else if(bt == btFigurspillTi)
-            {
-                Poeng = 0;
+            else if(bt == btFigurspillTi || bt == btRegnespillT || bt == btDyrespillT)
+            { 
                 FigurspillTimer.Stop();
                 GjemmeSpillPanelene();
+                nedtelling = 10;
             }
         }
 
@@ -111,9 +117,21 @@ namespace Læringsapplikasjon
 
         }
 
+        private void btSpillmenyS_Click(object sender, EventArgs e) //sjekker hvilket spill man åpner fra spillmenyen
+        {
+            Random rnd = new Random();
+
+            switch (lNavnSpill.Text)
+            {
+                case "Figurspill": lFigurspillFeilEllerRiktig.Text = ""; pFigurspill.Visible = true; pFigurspill.Dock = DockStyle.Fill; RandomFigurInt = rnd.Next(6); HvilkenFigurSkalVises(RandomFigurInt); break;
+                case "Tallspill": pRegnespill.Visible = true; RegnespillTimer.Start(); pRegnespill.Dock = DockStyle.Fill; lRegnespillRO.Text = ""; lRegnespillT1.Text = ""; lRegnespillT2.Text = "";
+                   RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1,10), rnd.Next(1,10),rnd.Next(4)); label6.Text = "0"; break;
+                case "Dyrespill": pDyrespill.Visible = true; pDyrespill.Dock = DockStyle.Fill; break;
+            }
+        }
+
         #region FigurSpill
 
-        int RandomFigurInt;
 
         private void FigurspillKnapper(object sender, EventArgs e) //Sjekker om knappen man trykker på er riktig eller ikke, 
                                                                     //hvis den er riktig vil man få et poeng og hvis det er feil blir man sendt
@@ -183,14 +201,70 @@ namespace Læringsapplikasjon
 
         #endregion
 
-        private void btSpillmenyS_Click(object sender, EventArgs e) //sjekker hvilket spill man åpner fra spillmenyen
-        {
-            Random rnd = new Random();
+        #region Tallspill 
 
-            switch (lNavnSpill.Text)
+        private void RegnespillTimer_Tick(object sender, EventArgs e)//Teller ned, og sjekker om det har gått 10 sekunder
+        {
+            label4.Text = Convert.ToString(nedtelling);
+            nedtelling--;
+            if(nedtelling == 0)
             {
-                case "Figurspill": lFigurspillFeilEllerRiktig.Text = ""; pFigurspill.Visible = true; pFigurspill.Dock = DockStyle.Fill; RandomFigurInt = rnd.Next(6); HvilkenFigurSkalVises(RandomFigurInt); break;
+                Poeng = 0;
+                nedtelling = 10;
+                GjemmeSpillPanelene();
+                tbRegnespillSvar.Clear();
             }
         }
+
+        private void btRegnespillS_Click(object sender, EventArgs e)//sjekker om svaret spilleren skriver er riktig, 
+        {                                                           //hvis det er feil blir senderen sendt tilbake til spillmenyen
+            Random rnd = new Random();
+            if(tbRegnespillSvar.Text == Convert.ToString(RegneSpillSvar))
+            {
+                Poeng++;
+                tbRegnespillSvar.Clear();
+                label6.Text = Convert.ToString(Poeng);
+                nedtelling = 10;
+                RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1,10), rnd.Next(1, 10), rnd.Next(4));
+            }
+            else
+            {
+                Poeng = 0;
+                nedtelling = 10;
+                GjemmeSpillPanelene();
+            }
+        }
+
+        private int HvilkeTallSkalBrukes(int a, int b, int c) //Regner hva svaret blir og sender det ut fra funksjonen
+        {
+            string regneoperasjon = "";
+            int svar = 0;
+            lRegnespillT1.Text = Convert.ToString(a);
+            lRegnespillT2.Text = Convert.ToString(b);
+            switch (c)
+            {
+                case 0: regneoperasjon = "+"; svar = a + b; break;
+                case 1: regneoperasjon = "-"; svar = a - b; break;
+                case 2: regneoperasjon = "*"; svar = a * b; break;
+                case 3: regneoperasjon = "/"; svar = a / b; break;
+            }
+            lRegnespillRO.Text = regneoperasjon;
+            return svar;
+        }
+        #endregion
+
+        #region dyrespill
+
+        private void pbDyrespillClick(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        #endregion
+
+
     }
+
 }

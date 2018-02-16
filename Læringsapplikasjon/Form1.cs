@@ -288,16 +288,18 @@ namespace Læringsapplikasjon
             }
             else
             {
-                Poeng = 0;
-                nedtelling = 10;
-                lDyrespillRiktigSvar.Text = "Feil svar";
+                Reset();
             }
         }
         private void DyrespillTimer_Tick(object sender, EventArgs e)
         {
             nedtelling--;
             lDyrespillTid.Text = Convert.ToString(nedtelling);
-
+            if (nedtelling == 0)
+            {
+                lDyrespillRiktigSvar.Text = "Tiden har gått ut";
+                Reset();
+            }
         }
 
 
@@ -306,10 +308,12 @@ namespace Læringsapplikasjon
 
         private void Reset()
         {
-            Poeng = 0;
-            nedtelling = 10;
-
-
+            ResetTimer.Start();
+            btDyrespillH.Enabled = false;
+            pb0.Enabled = false;
+            pb1.Enabled = false;
+            pb2.Enabled = false;
+            pb3.Enabled = false;
         }
 
         private void ResetTimer_Tick(object sender, EventArgs e)
@@ -317,7 +321,10 @@ namespace Læringsapplikasjon
             ResetTimerTick++;
             if (ResetTimerTick == 2)
             {
+                Poeng = 0;
+                nedtelling = 10;
                 GjemmeSpillPanelene();
+                lDyrespillRiktigSvar.Text = "";
                 ResetTimer.Stop();
             }
         }

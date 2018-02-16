@@ -25,8 +25,13 @@ namespace Læringsapplikasjon
         int nedtelling = 10;
         int RegneSpillSvar;
         int HørLydIgjen = 3;
+        int RandomDyrelyd;
+        int HvilkenDyreKnapp;
+        int ResetTimerTick;
+
 
         SoundPlayer BakgrunnsMusikk = new SoundPlayer("bakgrunnsmusikk.wav");
+        SoundPlayer Dyrelyder = new SoundPlayer();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -50,19 +55,19 @@ namespace Læringsapplikasjon
         {                                                        //til det som passer til spillet
             Button bt = sender as Button;
 
-            if(bt == btStartF)
+            if (bt == btStartF)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.figurspill;
             }
-            else if(bt == btStartT)
+            else if (bt == btStartT)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.tallspill;
             }
-            else if(bt == btStartD)
+            else if (bt == btStartD)
             {
                 pbStartmeny.Image = Læringsapplikasjon.Properties.Resources.dyrspill;
             }
-            
+
         }
 
         private void StartmenyClick(object sender, MouseEventArgs e) //sjekker hvilken knapp i startmenyen du trykker på og endrer
@@ -89,15 +94,19 @@ namespace Læringsapplikasjon
         private void TilbakeKnapp(object sender, EventArgs e) //sjekker hvilken tilbakeknapp du trykker på og sender deg til det riktige panelet
         {
             Button bt = sender as Button;
-            if(pSpillmeny.Visible == true)
+            if (pSpillmeny.Visible == true)
             {
                 pSpillmeny.Visible = false;
             }
-            else if(bt == btFigurspillTi || bt == btRegnespillT || bt == btDyrespillT)
-            { 
+            else if (bt == btFigurspillTi || bt == btRegnespillT || bt == btDyrespillT)
+            {
                 FigurspillTimer.Stop();
                 GjemmeSpillPanelene();
                 nedtelling = 10;
+                lFigurspillPoeng.Text = "0";
+                label6.Text = "0";
+                tbRegnespillSvar.Clear();
+                BakgrunnsMusikk.Play();
             }
         }
 
@@ -127,9 +136,10 @@ namespace Læringsapplikasjon
             switch (lNavnSpill.Text)
             {
                 case "Figurspill": lFigurspillFeilEllerRiktig.Text = ""; pFigurspill.Visible = true; pFigurspill.Dock = DockStyle.Fill; RandomFigurInt = rnd.Next(6); HvilkenFigurSkalVises(RandomFigurInt); break;
-                case "Tallspill": pRegnespill.Visible = true; RegnespillTimer.Start(); pRegnespill.Dock = DockStyle.Fill; lRegnespillRO.Text = ""; lRegnespillT1.Text = ""; lRegnespillT2.Text = "";
-                   RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1,10), rnd.Next(1,10),rnd.Next(4)); label6.Text = "0"; break;
-                case "Dyrespill": pDyrespill.Visible = true; pDyrespill.Dock = DockStyle.Fill; break;
+                case "Tallspill":
+                    pRegnespill.Visible = true; RegnespillTimer.Start(); pRegnespill.Dock = DockStyle.Fill; lRegnespillRO.Text = ""; lRegnespillT1.Text = ""; lRegnespillT2.Text = "";
+                    RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1, 10), rnd.Next(1, 10), rnd.Next(4)); label6.Text = "0"; break;
+                case "Dyrespill": pDyrespill.Visible = true; nedtelling = 10; Poeng = 0; pDyrespill.Dock = DockStyle.Fill; RandomDyrelyd = rnd.Next(4); DyrespillTimer.Start(); break;
             }
             BakgrunnsMusikk.Stop();
         }
@@ -138,12 +148,12 @@ namespace Læringsapplikasjon
 
 
         private void FigurspillKnapper(object sender, EventArgs e) //Sjekker om knappen man trykker på er riktig eller ikke, 
-                                                                    //hvis den er riktig vil man få et poeng og hvis det er feil blir man sendt
+                                                                   //hvis den er riktig vil man få et poeng og hvis det er feil blir man sendt
         {                                                           //tilbake til spillmenyen
             Button b = sender as Button;
             Random r = new Random();
-         
-            if(b == btFigurspillTr && RandomFigurInt == 0 ||
+
+            if (b == btFigurspillTr && RandomFigurInt == 0 ||
                 b == btFigurspillFi && RandomFigurInt == 1 ||
                 b == btFigurspillSi && RandomFigurInt == 2 ||
                 b == btFigurspillSt && RandomFigurInt == 3 ||
@@ -209,9 +219,9 @@ namespace Læringsapplikasjon
 
         private void RegnespillTimer_Tick(object sender, EventArgs e)//Teller ned, og sjekker om det har gått 10 sekunder
         {
-            label4.Text = Convert.ToString(nedtelling);
+            lRegnespillTidIgjen.Text = Convert.ToString(nedtelling);
             nedtelling--;
-            if(nedtelling == 0)
+            if (nedtelling == 0)
             {
                 Poeng = 0;
                 nedtelling = 10;
@@ -223,13 +233,12 @@ namespace Læringsapplikasjon
         private void btRegnespillS_Click(object sender, EventArgs e)//sjekker om svaret spilleren skriver er riktig, 
         {                                                           //hvis det er feil blir senderen sendt tilbake til spillmenyen
             Random rnd = new Random();
-            if(tbRegnespillSvar.Text == Convert.ToString(RegneSpillSvar))
+            if (tbRegnespillSvar.Text == Convert.ToString(RegneSpillSvar))
             {
                 Poeng++;
-                tbRegnespillSvar.Clear();
                 label6.Text = Convert.ToString(Poeng);
                 nedtelling = 10;
-                RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1,10), rnd.Next(1, 10), rnd.Next(4));
+                RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1, 10), rnd.Next(1, 10), rnd.Next(4));
             }
             else
             {
@@ -237,6 +246,7 @@ namespace Læringsapplikasjon
                 nedtelling = 10;
                 GjemmeSpillPanelene();
             }
+            tbRegnespillSvar.Clear();
         }
 
         private int HvilkeTallSkalBrukes(int a, int b, int c) //Regner hva svaret blir og sender det ut fra funksjonen
@@ -261,6 +271,32 @@ namespace Læringsapplikasjon
 
         private void pbDyrespillClick(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+            PictureBox p = sender as PictureBox;
+            switch (p.Name)
+            {
+                case "pb0": HvilkenDyreKnapp = 0; break;
+                case "pb1": HvilkenDyreKnapp = 1; break;
+                case "pb2": HvilkenDyreKnapp = 2; break;
+                case "pb3": HvilkenDyreKnapp = 3; break;
+            }
+            if (HvilkenDyreKnapp == RandomDyrelyd)
+            {
+                Poeng++;
+                lDyrespillPoeng.Text = Convert.ToString(Poeng);
+                lDyrespillRiktigSvar.Text = "Riktig Svar";
+            }
+            else
+            {
+                Poeng = 0;
+                nedtelling = 10;
+                lDyrespillRiktigSvar.Text = "Feil svar";
+            }
+        }
+        private void DyrespillTimer_Tick(object sender, EventArgs e)
+        {
+            nedtelling--;
+            lDyrespillTid.Text = Convert.ToString(nedtelling);
 
         }
 
@@ -268,7 +304,23 @@ namespace Læringsapplikasjon
 
         #endregion
 
+        private void Reset()
+        {
+            Poeng = 0;
+            nedtelling = 10;
 
+
+        }
+
+        private void ResetTimer_Tick(object sender, EventArgs e)
+        {
+            ResetTimerTick++;
+            if (ResetTimerTick == 2)
+            {
+                GjemmeSpillPanelene();
+                ResetTimer.Stop();
+            }
+        }
     }
 
 }

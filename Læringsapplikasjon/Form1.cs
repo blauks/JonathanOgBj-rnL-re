@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Læringsapplikasjon
 {
@@ -25,6 +26,7 @@ namespace Læringsapplikasjon
         int RegneSpillSvar;
         int HørLydIgjen = 3;
 
+        SoundPlayer BakgrunnsMusikk = new SoundPlayer("bakgrunnsmusikk.wav");
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,6 +39,7 @@ namespace Læringsapplikasjon
             pFigurspill.Visible = false;
             pRegnespill.Visible = false;
             pDyrespill.Visible = false;
+            BakgrunnsMusikk.Play();
         }
 
 
@@ -128,6 +131,7 @@ namespace Læringsapplikasjon
                    RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1,10), rnd.Next(1,10),rnd.Next(4)); label6.Text = "0"; break;
                 case "Dyrespill": pDyrespill.Visible = true; pDyrespill.Dock = DockStyle.Fill; break;
             }
+            BakgrunnsMusikk.Stop();
         }
 
         #region FigurSpill

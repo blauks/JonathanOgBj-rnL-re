@@ -103,6 +103,17 @@
   <ItemGroup>
     <None Include="Resources\LP_Trekant.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\hund.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\løve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sau.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

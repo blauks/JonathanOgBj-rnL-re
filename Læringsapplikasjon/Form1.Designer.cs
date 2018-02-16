@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.pStartmeny = new System.Windows.Forms.Panel();
             this.pDyrespill = new System.Windows.Forms.Panel();
+            this.lDyrespillPoeng = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lDyrespillRiktigSvar = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lDyrespillTid = new System.Windows.Forms.Label();
             this.btDyrespillH = new System.Windows.Forms.Button();
@@ -81,9 +84,6 @@
             this.RegnespillTimer = new System.Windows.Forms.Timer(this.components);
             this.ResetTimer = new System.Windows.Forms.Timer(this.components);
             this.DyrespillTimer = new System.Windows.Forms.Timer(this.components);
-            this.lDyrespillRiktigSvar = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lDyrespillPoeng = new System.Windows.Forms.Label();
             this.pStartmeny.SuspendLayout();
             this.pDyrespill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
@@ -101,7 +101,7 @@
             // 
             // pStartmeny
             // 
-            this.pStartmeny.Controls.Add(this.pDyrespill);
+            this.pStartmeny.Controls.Add(this.pRegnespill);
             this.pStartmeny.Controls.Add(this.pFigurspill);
             this.pStartmeny.Controls.Add(this.pSpillmeny);
             this.pStartmeny.Controls.Add(this.labelStartMeny);
@@ -128,11 +128,40 @@
             this.pDyrespill.Controls.Add(this.pb2);
             this.pDyrespill.Controls.Add(this.pb1);
             this.pDyrespill.Controls.Add(this.pb0);
-            this.pDyrespill.Location = new System.Drawing.Point(12, 3);
+            this.pDyrespill.Location = new System.Drawing.Point(28, 255);
             this.pDyrespill.Name = "pDyrespill";
-            this.pDyrespill.Size = new System.Drawing.Size(989, 618);
+            this.pDyrespill.Size = new System.Drawing.Size(336, 153);
             this.pDyrespill.TabIndex = 15;
             this.pDyrespill.Click += new System.EventHandler(this.pbDyrespillClick);
+            // 
+            // lDyrespillPoeng
+            // 
+            this.lDyrespillPoeng.AutoSize = true;
+            this.lDyrespillPoeng.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDyrespillPoeng.Location = new System.Drawing.Point(873, 508);
+            this.lDyrespillPoeng.Name = "lDyrespillPoeng";
+            this.lDyrespillPoeng.Size = new System.Drawing.Size(23, 25);
+            this.lDyrespillPoeng.TabIndex = 12;
+            this.lDyrespillPoeng.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(777, 505);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Poeng:";
+            // 
+            // lDyrespillRiktigSvar
+            // 
+            this.lDyrespillRiktigSvar.AutoSize = true;
+            this.lDyrespillRiktigSvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDyrespillRiktigSvar.Location = new System.Drawing.Point(829, 210);
+            this.lDyrespillRiktigSvar.Name = "lDyrespillRiktigSvar";
+            this.lDyrespillRiktigSvar.Size = new System.Drawing.Size(0, 25);
+            this.lDyrespillRiktigSvar.TabIndex = 10;
             // 
             // label9
             // 
@@ -162,6 +191,7 @@
             this.btDyrespillH.TabIndex = 7;
             this.btDyrespillH.Text = "Hør lyd igjen";
             this.btDyrespillH.UseVisualStyleBackColor = true;
+            this.btDyrespillH.Click += new System.EventHandler(this.btDyrespillH_Click);
             // 
             // btDyrespillT
             // 
@@ -176,36 +206,44 @@
             // 
             // pb3
             // 
+            this.pb3.Image = global::Læringsapplikasjon.Properties.Resources.sau;
             this.pb3.Location = new System.Drawing.Point(425, 319);
             this.pb3.Name = "pb3";
             this.pb3.Size = new System.Drawing.Size(327, 228);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb3.TabIndex = 5;
             this.pb3.TabStop = false;
             this.pb3.Click += new System.EventHandler(this.pbDyrespillClick);
             // 
             // pb2
             // 
+            this.pb2.Image = global::Læringsapplikasjon.Properties.Resources.ku;
             this.pb2.Location = new System.Drawing.Point(54, 319);
             this.pb2.Name = "pb2";
             this.pb2.Size = new System.Drawing.Size(327, 228);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2.TabIndex = 4;
             this.pb2.TabStop = false;
             this.pb2.Click += new System.EventHandler(this.pbDyrespillClick);
             // 
             // pb1
             // 
+            this.pb1.Image = global::Læringsapplikasjon.Properties.Resources.løve;
             this.pb1.Location = new System.Drawing.Point(425, 56);
             this.pb1.Name = "pb1";
             this.pb1.Size = new System.Drawing.Size(327, 228);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1.TabIndex = 3;
             this.pb1.TabStop = false;
             this.pb1.Click += new System.EventHandler(this.pbDyrespillClick);
             // 
             // pb0
             // 
+            this.pb0.Image = global::Læringsapplikasjon.Properties.Resources.hund;
             this.pb0.Location = new System.Drawing.Point(54, 56);
             this.pb0.Name = "pb0";
             this.pb0.Size = new System.Drawing.Size(327, 228);
+            this.pb0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb0.TabIndex = 2;
             this.pb0.TabStop = false;
             this.pb0.Click += new System.EventHandler(this.pbDyrespillClick);
@@ -364,8 +402,9 @@
             // 
             // pSpillmeny
             // 
+            this.pSpillmeny.Controls.Add(this.label6);
+            this.pSpillmeny.Controls.Add(this.pDyrespill);
             this.pSpillmeny.Controls.Add(this.btTilbakeSpillMeny);
-            this.pSpillmeny.Controls.Add(this.pRegnespill);
             this.pSpillmeny.Controls.Add(this.btSpillmenyI);
             this.pSpillmeny.Controls.Add(this.btSpillmenyT);
             this.pSpillmeny.Controls.Add(this.btSpillmenyS);
@@ -389,7 +428,6 @@
             // 
             // pRegnespill
             // 
-            this.pRegnespill.Controls.Add(this.label6);
             this.pRegnespill.Controls.Add(this.label7);
             this.pRegnespill.Controls.Add(this.lRegnespillTidIgjen);
             this.pRegnespill.Controls.Add(this.label3);
@@ -402,16 +440,16 @@
             this.pRegnespill.Controls.Add(this.lRegnespillT2);
             this.pRegnespill.Controls.Add(this.lRegnespillRO);
             this.pRegnespill.Controls.Add(this.lRegnespillT1);
-            this.pRegnespill.Location = new System.Drawing.Point(385, 279);
+            this.pRegnespill.Location = new System.Drawing.Point(40, 347);
             this.pRegnespill.Name = "pRegnespill";
-            this.pRegnespill.Size = new System.Drawing.Size(131, 113);
+            this.pRegnespill.Size = new System.Drawing.Size(242, 152);
             this.pRegnespill.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(901, 33);
+            this.label6.Location = new System.Drawing.Point(658, 162);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 25);
             this.label6.TabIndex = 12;
@@ -633,7 +671,6 @@
             // 
             // pbStartmeny
             // 
-            this.pbStartmeny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbStartmeny.Location = new System.Drawing.Point(0, 0);
             this.pbStartmeny.Name = "pbStartmeny";
             this.pbStartmeny.Size = new System.Drawing.Size(1004, 621);
@@ -660,35 +697,6 @@
             // 
             this.DyrespillTimer.Interval = 1000;
             this.DyrespillTimer.Tick += new System.EventHandler(this.DyrespillTimer_Tick);
-            // 
-            // lDyrespillRiktigSvar
-            // 
-            this.lDyrespillRiktigSvar.AutoSize = true;
-            this.lDyrespillRiktigSvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDyrespillRiktigSvar.Location = new System.Drawing.Point(829, 210);
-            this.lDyrespillRiktigSvar.Name = "lDyrespillRiktigSvar";
-            this.lDyrespillRiktigSvar.Size = new System.Drawing.Size(0, 25);
-            this.lDyrespillRiktigSvar.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(777, 505);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 25);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Poeng:";
-            // 
-            // lDyrespillPoeng
-            // 
-            this.lDyrespillPoeng.AutoSize = true;
-            this.lDyrespillPoeng.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDyrespillPoeng.Location = new System.Drawing.Point(873, 508);
-            this.lDyrespillPoeng.Name = "lDyrespillPoeng";
-            this.lDyrespillPoeng.Size = new System.Drawing.Size(23, 25);
-            this.lDyrespillPoeng.TabIndex = 12;
-            this.lDyrespillPoeng.Text = "0";
             // 
             // Form1
             // 

@@ -24,14 +24,13 @@ namespace Læringsapplikasjon
         int RandomFigurInt;
         int nedtelling = 10;
         int RegneSpillSvar;
-        int HørLydIgjen = 3;
         int RandomDyrelyd;
         int HvilkenDyreKnapp;
         int ResetTimerTick;
 
 
         SoundPlayer BakgrunnsMusikk = new SoundPlayer("bakgrunnsmusikk.wav");
-        SoundPlayer Dyrelyder = new SoundPlayer();
+        SoundPlayer[] DyrelydArray = new SoundPlayer[4];
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -45,6 +44,10 @@ namespace Læringsapplikasjon
             pRegnespill.Visible = false;
             pDyrespill.Visible = false;
             BakgrunnsMusikk.Play();
+            DyrelydArray[0] = new SoundPlayer("voff.wav");
+            DyrelydArray[1] = new SoundPlayer("rarw.wav");
+            DyrelydArray[2] = new SoundPlayer("ku.wav");
+            DyrelydArray[3] = new SoundPlayer("bæ.wav");
         }
 
 
@@ -101,11 +104,7 @@ namespace Læringsapplikasjon
             else if (bt == btFigurspillTi || bt == btRegnespillT || bt == btDyrespillT)
             {
                 FigurspillTimer.Stop();
-                GjemmeSpillPanelene();
-                nedtelling = 10;
-                lFigurspillPoeng.Text = "0";
-                label6.Text = "0";
-                tbRegnespillSvar.Clear();
+                Reset();
                 BakgrunnsMusikk.Play();
             }
         }
@@ -132,6 +131,7 @@ namespace Læringsapplikasjon
         private void btSpillmenyS_Click(object sender, EventArgs e) //sjekker hvilket spill man åpner fra spillmenyen
         {
             Random rnd = new Random();
+            BakgrunnsMusikk.Stop();
 
             switch (lNavnSpill.Text)
             {
@@ -139,9 +139,8 @@ namespace Læringsapplikasjon
                 case "Tallspill":
                     pRegnespill.Visible = true; RegnespillTimer.Start(); pRegnespill.Dock = DockStyle.Fill; lRegnespillRO.Text = ""; lRegnespillT1.Text = ""; lRegnespillT2.Text = "";
                     RegneSpillSvar = HvilkeTallSkalBrukes(rnd.Next(1, 10), rnd.Next(1, 10), rnd.Next(4)); label6.Text = "0"; break;
-                case "Dyrespill": pDyrespill.Visible = true; nedtelling = 10; Poeng = 0; pDyrespill.Dock = DockStyle.Fill; RandomDyrelyd = rnd.Next(4); DyrespillTimer.Start(); break;
+                case "Dyrespill": pDyrespill.Visible = true; nedtelling = 10; Poeng = 0; pDyrespill.Dock = DockStyle.Fill; RandomDyrelyd = rnd.Next(4); DyrespillTimer.Start(); SpillDyrelydInt(RandomDyrelyd); break;
             }
-            BakgrunnsMusikk.Stop();
         }
 
         #region FigurSpill
@@ -169,8 +168,7 @@ namespace Læringsapplikasjon
             }
             else
             {
-                Poeng = 0;
-                GjemmeSpillPanelene();
+                Reset();
             }
 
         }
@@ -183,8 +181,7 @@ namespace Læringsapplikasjon
             GjørAlleFigurKnapperRøde();
             if (pbFigurspill.Bounds.IntersectsWith(panel1.Bounds))
             {
-                Poeng = 0;
-                GjemmeSpillPanelene();
+                Reset();
             }
         }
 
@@ -215,7 +212,7 @@ namespace Læringsapplikasjon
 
         #endregion
 
-        #region Tallspill 
+        #region Regnespill 
 
         private void RegnespillTimer_Tick(object sender, EventArgs e)//Teller ned, og sjekker om det har gått 10 sekunder
         {
@@ -223,10 +220,7 @@ namespace Læringsapplikasjon
             nedtelling--;
             if (nedtelling == 0)
             {
-                Poeng = 0;
-                nedtelling = 10;
-                GjemmeSpillPanelene();
-                tbRegnespillSvar.Clear();
+                Reset();
             }
         }
 
@@ -242,9 +236,7 @@ namespace Læringsapplikasjon
             }
             else
             {
-                Poeng = 0;
-                nedtelling = 10;
-                GjemmeSpillPanelene();
+                Reset();
             }
             tbRegnespillSvar.Clear();
         }
@@ -283,13 +275,18 @@ namespace Læringsapplikasjon
             if (HvilkenDyreKnapp == RandomDyrelyd)
             {
                 Poeng++;
+                nedtelling = 10;
                 lDyrespillPoeng.Text = Convert.ToString(Poeng);
                 lDyrespillRiktigSvar.Text = "Riktig Svar";
+                RandomDyrelyd = rnd.Next(4);
+                SpillDyrelydInt(RandomDyrelyd);
+
             }
             else
             {
                 Reset();
             }
+
         }
         private void DyrespillTimer_Tick(object sender, EventArgs e)
         {
@@ -299,10 +296,25 @@ namespace Læringsapplikasjon
             {
                 lDyrespillRiktigSvar.Text = "Tiden har gått ut";
                 Reset();
+                DyrespillTimer.Stop();
             }
         }
 
+        private void SpillDyrelydInt(int i)
+        {
+            switch (i)
+            {
+                case 0: DyrelydArray[0].Play(); break;
+                case 1: DyrelydArray[1].Play(); break;
+                case 2: DyrelydArray[2].Play(); break;
+                case 3: DyrelydArray[3].Play(); break;
+            }
 
+        }
+        private void btDyrespillH_Click(object sender, EventArgs e)
+        {
+            SpillDyrelydInt(RandomDyrelyd);
+        }
 
         #endregion
 
@@ -310,10 +322,8 @@ namespace Læringsapplikasjon
         {
             ResetTimer.Start();
             btDyrespillH.Enabled = false;
-            pb0.Enabled = false;
-            pb1.Enabled = false;
-            pb2.Enabled = false;
-            pb3.Enabled = false;
+            tbRegnespillSvar.Clear();
+            DyrespillTimer.Stop();
         }
 
         private void ResetTimer_Tick(object sender, EventArgs e)
@@ -328,6 +338,7 @@ namespace Læringsapplikasjon
                 ResetTimer.Stop();
             }
         }
+
     }
 
 }

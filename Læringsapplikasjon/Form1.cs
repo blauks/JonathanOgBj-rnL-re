@@ -261,18 +261,18 @@ namespace Læringsapplikasjon
 
         #region dyrespill
 
-        private void pbDyrespillClick(object sender, EventArgs e)
+        private void pbDyrespillClick(object sender, EventArgs e) 
         {
             Random rnd = new Random();
             PictureBox p = sender as PictureBox;
-            switch (p.Name)
+            switch (p.Name) //gjør pictureboxene om til int
             {
                 case "pb0": HvilkenDyreKnapp = 0; break;
                 case "pb1": HvilkenDyreKnapp = 1; break;
                 case "pb2": HvilkenDyreKnapp = 2; break;
                 case "pb3": HvilkenDyreKnapp = 3; break;
             }
-            if (HvilkenDyreKnapp == RandomDyrelyd)
+            if (HvilkenDyreKnapp == RandomDyrelyd) //sjekker om dyrelyden passer med bildet, før den går til neste lyd, ellers resetter den
             {
                 Poeng++;
                 nedtelling = 10;
@@ -288,7 +288,7 @@ namespace Læringsapplikasjon
             }
 
         }
-        private void DyrespillTimer_Tick(object sender, EventArgs e)
+        private void DyrespillTimer_Tick(object sender, EventArgs e) //når det er gått 10 sek, resetter den
         {
             nedtelling--;
             lDyrespillTid.Text = Convert.ToString(nedtelling);
@@ -300,7 +300,7 @@ namespace Læringsapplikasjon
             }
         }
 
-        private void SpillDyrelydInt(int i)
+        private void SpillDyrelydInt(int i) //funksjon som spiller dyrelyden som er tilfeldig valgt
         {
             switch (i)
             {
@@ -318,15 +318,18 @@ namespace Læringsapplikasjon
 
         #endregion
 
-        private void Reset()
+        private void Reset() //en felles resetter for alt, som venter 2 sekunder før den gjemmer panelet og resetter nedtelling, poeng osv.
         {
             ResetTimer.Start();
             btDyrespillH.Enabled = false;
             tbRegnespillSvar.Clear();
             DyrespillTimer.Stop();
+            RegnespillTimer.Stop();
+            FigurspillTimer.Stop();
+            
         }
 
-        private void ResetTimer_Tick(object sender, EventArgs e)
+        private void ResetTimer_Tick(object sender, EventArgs e) //delayer 2 sek
         {
             ResetTimerTick++;
             if (ResetTimerTick == 2)
